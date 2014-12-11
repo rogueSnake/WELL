@@ -27,7 +27,7 @@ WELL.player.createTether = function () {
     };
 
 WELL.player.updateScaffolding = function () {
-    if (WELL.player.scaffolding.body.y < (WELL.config.MAP_HEIGHT - WELL.config.SCREEN_HEIGHT)) {
+    if (WELL.player.scaffolding.body.y < (WELL.config.WORLD_HEIGHT - WELL.config.SCREEN_HEIGHT)) {
         WELL.player.scaffolding.body.moveDown(WELL.config.DESCENT_SPEED);
         }    
     };
