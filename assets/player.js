@@ -37,11 +37,16 @@ WELL.player.updateEmitter = function () {
     };
 
 WELL.player.updateShooting = function () {
-    if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
-        WELL.player.shootLeft();
-        }
-    else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - (WELL.config.SCREEN_WIDTH / 3))) {
-        WELL.player.shootRight();
+    
+    if (WELL.run.game.input.activePointer.isDown === true) {
+
+        if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
+            WELL.player.shootLeft();
+            }
+
+        else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - (WELL.config.SCREEN_WIDTH / 3))) {
+            WELL.player.shootRight();
+            }
         }
     };
 
