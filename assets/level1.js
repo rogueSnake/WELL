@@ -15,9 +15,6 @@ WELL.level1.create = function () {
 
     //collision on blockedLayer
     WELL.level1.map.setCollisionBetween(1, 2000, true, 'walls');
-
-    //resizes the game world to match the layer dimensions
-//    WELL.level1.backgroundlayer.resizeWorld();    
     };
 
 WELL.level1.update = function () {
