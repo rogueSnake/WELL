@@ -2,6 +2,7 @@
 
 WELL.player.preload = function () {
 	WELL.run.game.load.image('player', WELL.config.PLAYER_IMG);
+    WELL.run.game.load.image('playerHitParticle', WELL.config.PLAYER_HIT_PARTICLE);
     };
 
 WELL.player.create = function () {
@@ -16,6 +17,11 @@ WELL.player.create = function () {
 
     WELL.run.game.physics.p2.enableBody(WELL.player.sprite);
     WELL.run.game.camera.follow(WELL.player.sprite);
+    
+    WELL.player.particleEmitter = WELL.run.game.add.emitter(WELL.player.sprite.body.x, 1, 1);
+    WELL.player.particleEmitter.makeParticles('playerHitParticle');
+    WELL.player.particleEmitter.maxParticles = 1000;
+    WELL.player.particleEmitter.start(false, 900, 20);
 
     WELL.player.spring = 
             WELL.run.game.physics.p2.createSpring(WELL.player.scaffolding, 
@@ -28,5 +34,8 @@ WELL.player.update = function () {
 	if (WELL.player.scaffolding.body.y < (WELL.config.MAP_HEIGHT - WELL.config.SCREEN_HEIGHT)) {
         WELL.player.scaffolding.body.moveDown(WELL.config.DESCENT_SPEED);
     	}
+    WELL.player.particleEmitter.x = WELL.player.sprite.body.x;
+    WELL.player.particleEmitter.y = WELL.player.sprite.body.y;
     };
 // ^^^ I'm not sure why this update function isn't making the scaffolding descend.
+//Me neith'.

@@ -26,6 +26,7 @@ WELL.config.DESCENT_SPEED = 16;
 
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
+WELL.config.PLAYER_HIT_PARTICLE = 'assets/images/playerHitParticle.png';
 
 WELL.config.LEVEL1_MAP = 'assets/maps/level1.json';
 
