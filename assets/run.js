@@ -17,16 +17,11 @@ WELL.run.preload = function () {
     };
 
 WELL.run.create = function () {
-    WELL.run.game.world.setBounds(0, 0, WELL.config.MAP_WIDTH, WELL.config.MAP_HEIGHT);
+    WELL.run.game.world.setBounds(0, 0, WELL.config.WORLD_WIDTH, WELL.config.WORLD_HEIGHT);
     WELL.run.game.physics.startSystem(Phaser.Physics.P2JS);
     WELL.run.game.physics.p2.restitution = 1;
 //    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
-  
-    // Don't let any of the following keys affect anything outside of our game:
-    WELL.run.game.input.keyboard.addKeyCapture([Phaser.Keyboard.DOWN]);
-    WELL.run.game.input.keyboard.addKeyCapture([Phaser.Keyboard.UP]);
-    WELL.run.game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
-    
+      
     WELL.gameOver.create();
     WELL.intro.create();
     WELL.item.create();

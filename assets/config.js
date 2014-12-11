@@ -13,11 +13,11 @@ var WELL = {
 	run : {},
     };
 
-WELL.config.SCREEN_WIDTH = 600;
-WELL.config.SCREEN_HEIGHT = 800;
+WELL.config.SCREEN_WIDTH = 320;
+WELL.config.SCREEN_HEIGHT = 480;
 
-WELL.config.MAP_WIDTH = WELL.config.SCREEN_WIDTH;
-WELL.config.MAP_HEIGHT = 2000;
+WELL.config.WORLD_WIDTH = WELL.config.SCREEN_WIDTH;
+WELL.config.WORLD_HEIGHT = (WELL.config.SCREEN_HEIGHT * 20);
 
 WELL.config.CENTER_X = (WELL.config.SCREEN_WIDTH / 2);
 WELL.config.CENTER_Y = (WELL.config.SCREEN_HEIGHT / 2);
