@@ -1,7 +1,8 @@
 WELL.run.start = function() {
-    WELL.run.game = new Phaser.Game(WELL.config.SCREEN_WIDTH, WELL.config.SCREEN_HEIGHT, 
-            Phaser.AUTO, 'Well Inspector Simulator', {preload: WELL.run.preload, create: WELL.run.create, update: 
-            WELL.run.update});
+    WELL.run.game = new Phaser.Game(WELL.config.SCREEN_WIDTH, 
+    	    WELL.config.SCREEN_HEIGHT, Phaser.AUTO, 'Well Inspector Simulator',
+    	    {preload: WELL.run.preload, create: WELL.run.create, update: 
+    	    WELL.run.update, render: WELL.run.render});
     };
 
 WELL.run.preload = function () {
@@ -20,7 +21,8 @@ WELL.run.create = function () {
     WELL.run.game.world.setBounds(0, 0, WELL.config.WORLD_WIDTH, WELL.config.WORLD_HEIGHT);
     WELL.run.game.physics.startSystem(Phaser.Physics.P2JS);
     WELL.run.game.physics.p2.gravity.y = 100;
-    WELL.run.game.physics.p2.restitution = 0.8;
+    WELL.run.game.physics.p2.restitution = 0.4;
+    WELL.run.game.input.addPointer();
 //    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
       
     WELL.gameOver.create();
@@ -44,6 +46,13 @@ WELL.run.update = function () {
     WELL.level3.update();
     WELL.monster.update();
     WELL.player.update();
+    };
+
+WELL.run.render = function () {
+
+//Uncommenting this line will make debug information appear for the mouse/touch pointer, super useful:
+//    WELL.run.game.debug.pointer(WELL.run.game.input.mousePointer);
+
     };
 
 window.onload = WELL.run.start;

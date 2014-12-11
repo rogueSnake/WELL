@@ -22,7 +22,7 @@ WELL.config.WORLD_HEIGHT = (WELL.config.SCREEN_HEIGHT * 20);
 WELL.config.CENTER_X = (WELL.config.SCREEN_WIDTH / 2);
 WELL.config.CENTER_Y = (WELL.config.SCREEN_HEIGHT / 2);
 
-WELL.config.DESCENT_SPEED = 16;
+WELL.config.DESCENT_SPEED = 80;
 
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';

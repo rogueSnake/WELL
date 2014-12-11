@@ -3,6 +3,7 @@ WELL.player.createSprite = function () {
             WELL.config.CENTER_Y, 'player');
     WELL.run.game.physics.p2.enableBody(WELL.player.sprite);
     WELL.run.game.camera.follow(WELL.player.sprite);
+    WELL.player.sprite.body.fixedRotation = true;
     };
 
 WELL.player.createEmitter = function () {
@@ -15,9 +16,7 @@ WELL.player.createEmitter = function () {
 WELL.player.createScaffolding = function () {
     WELL.player.scaffolding = WELL.run.game.add.sprite(WELL.config.CENTER_X, 0);
     WELL.run.game.physics.p2.enable(WELL.player.scaffolding, true, true);
-//    WELL.player.scaffolding.body.setRectangle(150,50);
     WELL.player.scaffolding.body.kinematic = true;
-//    WELL.player.scaffolding.body.setCollisionGroup(scaffolingCollision);
     };
 
 WELL.player.createTether = function () {
@@ -31,12 +30,28 @@ WELL.player.updateScaffolding = function () {
         WELL.player.scaffolding.body.moveDown(WELL.config.DESCENT_SPEED);
         }    
     };
-// ^^^ I'm not sure why this update function isn't making the scaffolding descend.
-//Me neith'.
 
-WELL.player.updateEmitter = function() {
+WELL.player.updateEmitter = function () {
     WELL.player.particleEmitter.x = WELL.player.sprite.body.x;
     WELL.player.particleEmitter.y = WELL.player.sprite.body.y;
+    };
+
+WELL.player.updateShooting = function () {
+    if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
+        WELL.player.shootLeft();
+        }
+    else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - (WELL.config.SCREEN_WIDTH / 3))) {
+        WELL.player.shootRight();
+        }
+    };
+
+WELL.player.shootLeft = function () {
+    WELL.player.sprite.body.velocity.x += 5;
+    };
+
+
+WELL.player.shootRight = function () {
+    WELL.player.sprite.body.velocity.x -= 5;    
     };
 
 WELL.player.preload = function () {
@@ -55,4 +70,5 @@ WELL.player.create = function () {
 WELL.player.update = function () {
     WELL.player.updateScaffolding();
     WELL.player.updateEmitter();
+    WELL.player.updateShooting();
     };
