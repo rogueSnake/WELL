@@ -19,7 +19,8 @@ WELL.run.preload = function () {
 WELL.run.create = function () {
     WELL.run.game.world.setBounds(0, 0, WELL.config.WORLD_WIDTH, WELL.config.WORLD_HEIGHT);
     WELL.run.game.physics.startSystem(Phaser.Physics.P2JS);
-    WELL.run.game.physics.p2.restitution = 1;
+    WELL.run.game.physics.p2.gravity.y = 100;
+    WELL.run.game.physics.p2.restitution = 0.8;
 //    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
       
     WELL.gameOver.create();

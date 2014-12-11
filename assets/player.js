@@ -5,6 +5,7 @@ WELL.player.preload = function () {
 WELL.player.create = function () {
     WELL.player.sprite = WELL.run.game.add.sprite(WELL.config.CENTER_X, WELL.config.CENTER_Y, 'player');
     WELL.run.game.physics.p2.enableBody(WELL.player.sprite);
+    WELL.run.game.camera.follow(WELL.player.sprite);
     };
 
 WELL.player.update = function () {

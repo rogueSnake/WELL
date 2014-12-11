@@ -22,8 +22,10 @@ WELL.config.WORLD_HEIGHT = (WELL.config.SCREEN_HEIGHT * 20);
 WELL.config.CENTER_X = (WELL.config.SCREEN_WIDTH / 2);
 WELL.config.CENTER_Y = (WELL.config.SCREEN_HEIGHT / 2);
 
-WELL.config.TILEMAP = 'assets/images/tilemap.png';
+WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
+
+WELL.config.LEVEL1_MAP = 'assets/maps/level1.json';
 
 // Check to see if we are living the future. If we are living in the future and
 // the E.C.M.A. has convinced modern browsers to have Object.create predefined,
