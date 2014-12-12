@@ -57,10 +57,12 @@ WELL.weapon.create = function () {
     WELL.weapon.bullets.setAll('anchor.y', 1);
     WELL.weapon.bullets.setAll('outOfBoundsKill', true);
     WELL.weapon.bullets.setAll('checkWorldBounds', true);
+    
 
     WELL.weapon.nextShot = 0;
-    WELL.weapon.cooldownTime = WELL.config.DEFAULT_COOLDOWN_TIME;
-    WELL.weapon.blowback = WELL.config.DEFAULT_BLOWBACK;
+    // Each Well Inspector starts with a 1911.
+    WELL.weapon.cooldownTime = WELL.config.PISTOL_COOLDOWN_TIME;
+    WELL.weapon.blowback = WELL.config.PISTOL_BLOWBACK;
     };
 
 WELL.weapon.update = function () {

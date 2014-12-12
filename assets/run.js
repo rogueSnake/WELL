@@ -16,6 +16,9 @@ WELL.run.preload = function () {
     WELL.monster.preload();
     WELL.weapon.preload();
     WELL.player.preload();
+//    WELL.scaffolding.preload;
+// ^^^ These scaffolding lines are my attempt to separate that code from the player code,
+// ^^^ but right they break the game and I've gotta go work on real things.
     };
 
 WELL.run.create = function () {
@@ -37,6 +40,7 @@ WELL.run.create = function () {
     WELL.monster.create();
     WELL.weapon.create();
     WELL.player.create();
+//    WELL.scaffolding.create();
     };
         
 WELL.run.update = function () {
@@ -50,13 +54,14 @@ WELL.run.update = function () {
     WELL.monster.update();
     WELL.weapon.update();
     WELL.player.update();
+//    WELL.scaffolding.update();
     };
 
 WELL.run.render = function () {
-
-//Uncommenting this line will make debug information appear for the mouse/touch pointer, super useful:
-//    WELL.run.game.debug.pointer(WELL.run.game.input.mousePointer);
-
+    
+    if (WELL.config.DEBUG === true) {
+        WELL.run.game.debug.pointer(WELL.run.game.input.mousePointer);
+        }
     };
 
 window.onload = WELL.run.start;

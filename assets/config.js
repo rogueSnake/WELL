@@ -11,6 +11,7 @@ var WELL = {
 	monster : {},
 	weapon : {},
 	player : {},
+	scaffolding : {},
 	run : {},
     };
 
@@ -34,8 +35,21 @@ WELL.config.TETHER_LENGTH = 300;
 WELL.config.TETHER_STIFFNESS = 800;
 WELL.config.TETHER_DAMPING = 30;
 
-WELL.config.DEFAULT_BLOWBACK = 200;
-WELL.config.DEFAULT_COOLDOWN_TIME = 350;
+// Maybe change "default" to "pistol."
+WELL.config.PISTOL_BLOWBACK = 200;
+WELL.config.PISTOL_COOLDOWN_TIME = 350;
+
+WELL.config.SHOTGUN_BLOWBACK = 400;
+WELL.config.SHOTGUN_COOLDOWN_TIME = 400;
+
+WELL.config.AK_BLOWBACK = 200;
+WELL.config.AK_COOLDOWN_TIME = 20;
+
+WELL.config.M79_BLOWBACK = 500;
+WELL.config.M79_COOLDOWN_TIME = 500;
+
+WELL.config.PLASMA_BLOWBACK = 0;
+WELL.config.PLASMA_COOLDOWN_TIME = 0;
 
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
