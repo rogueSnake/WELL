@@ -9,6 +9,7 @@ var WELL = {
 	level2 : {},
 	level3 : {},
 	monster : {},
+	weapon : {},
 	player : {},
 	run : {},
     };
@@ -22,11 +23,21 @@ WELL.config.WORLD_HEIGHT = (WELL.config.SCREEN_HEIGHT * 20);
 WELL.config.CENTER_X = (WELL.config.SCREEN_WIDTH / 2);
 WELL.config.CENTER_Y = (WELL.config.SCREEN_HEIGHT / 2);
 
+WELL.config.GRAVITY = 900;
+WELL.config.RESTITUTION = 1;
 WELL.config.DESCENT_SPEED = 80;
+
+WELL.config.TETHER_LENGTH = 300;
+WELL.config.TETHER_STIFFNESS = 800;
+WELL.config.TETHER_DAMPING = 30;
+
+WELL.config.DEFAULT_BLOWBACK = 200;
+WELL.config.DEFAULT_COOLDOWN_TIME = 350;
 
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
 WELL.config.PLAYER_HIT_PARTICLE = 'assets/images/playerHitParticle.png';
+WELL.config.BULLET_IMG = 'assets/images/bullet.png';
 
 WELL.config.LEVEL1_MAP = 'assets/maps/level1.json';
 

@@ -14,14 +14,16 @@ WELL.run.preload = function () {
     WELL.level2.preload();
     WELL.level3.preload();
     WELL.monster.preload();
+    WELL.weapon.preload();
     WELL.player.preload();
     };
 
 WELL.run.create = function () {
     WELL.run.game.world.setBounds(0, 0, WELL.config.WORLD_WIDTH, WELL.config.WORLD_HEIGHT);
     WELL.run.game.physics.startSystem(Phaser.Physics.P2JS);
-    WELL.run.game.physics.p2.gravity.y = 100;
-    WELL.run.game.physics.p2.restitution = 0.4;
+    WELL.run.game.physics.startSystem(Phaser.Physics.ARCADE);
+    WELL.run.game.physics.p2.gravity.y = WELL.config.GRAVITY;
+    WELL.run.game.physics.p2.restitution = WELL.config.RESTITUTION;
     WELL.run.game.input.addPointer();
 //    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
       
@@ -33,6 +35,7 @@ WELL.run.create = function () {
     WELL.level2.create();
     WELL.level3.create();
     WELL.monster.create();
+    WELL.weapon.create();
     WELL.player.create();
     };
         
@@ -45,6 +48,7 @@ WELL.run.update = function () {
     WELL.level2.update();
     WELL.level3.update();
     WELL.monster.update();
+    WELL.weapon.update();
     WELL.player.update();
     };
 

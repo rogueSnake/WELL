@@ -22,7 +22,8 @@ WELL.player.createScaffolding = function () {
 WELL.player.createTether = function () {
     WELL.player.tether = 
             WELL.run.game.physics.p2.createSpring(WELL.player.scaffolding, 
-            WELL.player.sprite, 300, 10, 1);
+            WELL.player.sprite, WELL.config.TETHER_LENGTH, WELL.config.TETHER_STIFFNESS, 
+            WELL.config.TETHER_DAMPING);
     };
 
 WELL.player.updateScaffolding = function () {
@@ -34,29 +35,6 @@ WELL.player.updateScaffolding = function () {
 WELL.player.updateEmitter = function () {
     WELL.player.particleEmitter.x = WELL.player.sprite.body.x;
     WELL.player.particleEmitter.y = WELL.player.sprite.body.y;
-    };
-
-WELL.player.updateShooting = function () {
-    
-    if (WELL.run.game.input.activePointer.isDown === true) {
-
-        if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
-            WELL.player.shootLeft();
-            }
-
-        else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - (WELL.config.SCREEN_WIDTH / 3))) {
-            WELL.player.shootRight();
-            }
-        }
-    };
-
-WELL.player.shootLeft = function () {
-    WELL.player.sprite.body.velocity.x += 5;
-    };
-
-
-WELL.player.shootRight = function () {
-    WELL.player.sprite.body.velocity.x -= 5;    
     };
 
 WELL.player.preload = function () {
@@ -75,5 +53,4 @@ WELL.player.create = function () {
 WELL.player.update = function () {
     WELL.player.updateScaffolding();
     WELL.player.updateEmitter();
-    WELL.player.updateShooting();
     };
