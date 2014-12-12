@@ -14,6 +14,9 @@ var WELL = {
 	run : {},
     };
 
+WELL.config.DEBUG = true;
+// ^^^ Setting this to false removes debug boxes.
+
 WELL.config.SCREEN_WIDTH = 320;
 WELL.config.SCREEN_HEIGHT = 480;
 

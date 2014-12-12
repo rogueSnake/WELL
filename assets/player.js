@@ -4,6 +4,10 @@ WELL.player.createSprite = function () {
     WELL.run.game.physics.p2.enableBody(WELL.player.sprite);
     WELL.run.game.camera.follow(WELL.player.sprite);
     WELL.player.sprite.body.fixedRotation = true;
+
+    if (WELL.config.DEBUG === true) {
+        WELL.player.sprite.body.debug = true;
+        }
     };
 
 WELL.player.createEmitter = function () {
@@ -17,8 +21,13 @@ WELL.player.createEmitter = function () {
 
 WELL.player.createScaffolding = function () {
     WELL.player.scaffolding = WELL.run.game.add.sprite(WELL.config.CENTER_X, 0);
-    WELL.run.game.physics.p2.enable(WELL.player.scaffolding, true, true);
+    WELL.run.game.physics.p2.enable(WELL.player.scaffolding);
     WELL.player.scaffolding.body.kinematic = true;
+
+    if (WELL.config.DEBUG === true) {
+        WELL.player.scaffolding.body.debug = true;
+        }
+
     };
 
 WELL.player.createTether = function () {
