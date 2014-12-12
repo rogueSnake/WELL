@@ -14,7 +14,7 @@ WELL.level1.create = function () {
     WELL.level1.blockedLayer = WELL.level1.map.createLayer('walls');
 
     //collision on blockedLayer
-    WELL.level1.map.setCollisionBetween(1, 2000, true, 'walls');
+    WELL.level1.map.setCollisionBetween(1, 2000, true, WELL.level1.blockedLayer);
     };
 
 WELL.level1.update = function () {

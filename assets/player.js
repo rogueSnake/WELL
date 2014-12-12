@@ -11,6 +11,8 @@ WELL.player.createEmitter = function () {
     WELL.player.particleEmitter.makeParticles('playerHitParticle');
     WELL.player.particleEmitter.maxParticles = 1000;
     WELL.player.particleEmitter.start(false, 900, 20);
+    WELL.player.particleEmitter.on = false;
+    WELL.player.particleEmitterCooldown = 0;
     };
 
 WELL.player.createScaffolding = function () {
@@ -35,6 +37,15 @@ WELL.player.updateScaffolding = function () {
 WELL.player.updateEmitter = function () {
     WELL.player.particleEmitter.x = WELL.player.sprite.body.x;
     WELL.player.particleEmitter.y = WELL.player.sprite.body.y;
+
+    if (WELL.player.particleEmitterCooldown > 0) {
+        WELL.player.particleEmitterCooldown -= 1;
+        }
+    };
+
+WELL.player.emitShit = function () {
+    WELL.player.particleEmitter.on = true;
+    WELL.player.particleEmitterCooldown = 200;
     };
 
 WELL.player.preload = function () {
@@ -48,6 +59,7 @@ WELL.player.create = function () {
     WELL.player.createScaffolding();
     WELL.player.createTether();
     WELL.run.game.physics.p2.collide(WELL.player.sprite, WELL.level1.blockedLayer);
+    WELL.player.sprite.body.onBeginContact.add(WELL.player.emitShit);
     };
 
 WELL.player.update = function () {

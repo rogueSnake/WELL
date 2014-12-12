@@ -6,7 +6,7 @@ WELL.weapon.fireLeft = function () {
 
         if (bullet) {
             //  And fire it
-            bullet.reset(WELL.player.sprite.x - 8, WELL.player.sprite.y);
+            bullet.reset(WELL.player.sprite.x + 8, WELL.player.sprite.y + 5);
             bullet.body.velocity.x = -400;
             WELL.weapon.nextShot = WELL.run.game.time.now + WELL.weapon.cooldownTime;
             WELL.player.sprite.body.moveRight(WELL.weapon.blowback);
@@ -22,7 +22,7 @@ WELL.weapon.fireRight = function () {
 
         if (bullet) {
             //  And fire it
-            bullet.reset(WELL.player.sprite.x + 8, WELL.player.sprite.y);
+            bullet.reset(WELL.player.sprite.x - 8, WELL.player.sprite.y + 5);
             bullet.body.velocity.x = +400;
             WELL.weapon.nextShot = WELL.run.game.time.now + WELL.weapon.cooldownTime;
             WELL.player.sprite.body.moveLeft(WELL.weapon.blowback);
