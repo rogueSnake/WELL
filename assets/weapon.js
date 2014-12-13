@@ -1,4 +1,7 @@
 WELL.weapon.fire = function() {
+
+	// This horribly ugly if statement is just making sure that the mouse/touch
+    // is clicked and that the cursor isn't in the middle third of the screen.
     if (WELL.run.game.input.activePointer.isDown === true && 
     	    ((WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) || 
         	(WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - 
@@ -16,20 +19,20 @@ WELL.weapon.fire = function() {
                 if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
                 	bullet.body.velocity.x -= WELL.config.BULLET_SPEED;
                 	WELL.player.sprite.body.moveRight(WELL.weapon.blowback);
-            	    }
+            	}
 
            		else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - (WELL.config.SCREEN_WIDTH / 3))) {
            			bullet.body.velocity.x += WELL.config.BULLET_SPEED;
                 	WELL.player.sprite.body.moveLeft(WELL.weapon.blowback);
-                	}
-            	}
-        	}
+                }
+            }
         }
-    };
+    }
+};
 
 WELL.weapon.preload = function () {
     WELL.run.game.load.image('bullet', WELL.config.BULLET_IMG);
-    };
+};
 
 WELL.weapon.create = function () {
     WELL.weapon.bullets = WELL.run.game.add.group();
@@ -45,8 +48,8 @@ WELL.weapon.create = function () {
     // Each Well Inspector starts with a 1911.
     WELL.weapon.cooldownTime = WELL.config.PISTOL_COOLDOWN_TIME;
     WELL.weapon.blowback = WELL.config.PISTOL_BLOWBACK;
-    };
+};
 
 WELL.weapon.update = function () {
 	WELL.weapon.fire();
-    };
+};

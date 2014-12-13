@@ -13,9 +13,9 @@ var WELL = {
 	player : {},
 	scaffolding : {},
 	run : {},
-    };
+};
 
-WELL.config.DEBUG = true;
+WELL.config.DEBUG = false;
 // ^^^ Setting this to false removes debug boxes.
 
 WELL.config.SCREEN_WIDTH = 320;
@@ -68,5 +68,5 @@ if (typeof Object.create !== 'function') {
         var F = function () {};
         F.prototype = o;
         return new F();
-        };
-    }
+    };
+}

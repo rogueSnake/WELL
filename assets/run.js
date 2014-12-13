@@ -3,7 +3,7 @@ WELL.run.start = function() {
     	    WELL.config.SCREEN_HEIGHT, Phaser.AUTO, 'Well Inspector Simulator',
     	    {preload: WELL.run.preload, create: WELL.run.create, update: 
     	    WELL.run.update, render: WELL.run.render});
-    };
+};
 
 WELL.run.preload = function () {
     WELL.gameOver.preload();
@@ -19,7 +19,7 @@ WELL.run.preload = function () {
 //    WELL.scaffolding.preload;
 // ^^^ These scaffolding lines are my attempt to separate that code from the player code,
 // ^^^ but right they break the game and I've gotta go work on real things.
-    };
+};
 
 WELL.run.create = function () {
     WELL.run.game.world.setBounds(0, 0, WELL.config.WORLD_WIDTH, WELL.config.WORLD_HEIGHT);
@@ -41,7 +41,7 @@ WELL.run.create = function () {
     WELL.weapon.create();
     WELL.player.create();
 //    WELL.scaffolding.create();
-    };
+};
         
 WELL.run.update = function () {
     WELL.gameOver.update();
@@ -55,13 +55,13 @@ WELL.run.update = function () {
     WELL.weapon.update();
     WELL.player.update();
 //    WELL.scaffolding.update();
-    };
+};
 
 WELL.run.render = function () {
     
     if (WELL.config.DEBUG === true) {
         WELL.run.game.debug.pointer(WELL.run.game.input.mousePointer);
-        }
-    };
+    }
+};
 
 window.onload = WELL.run.start;
