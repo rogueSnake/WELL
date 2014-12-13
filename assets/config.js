@@ -51,6 +51,8 @@ WELL.config.M79_COOLDOWN_TIME = 500;
 WELL.config.PLASMA_BLOWBACK = 0;
 WELL.config.PLASMA_COOLDOWN_TIME = 0;
 
+WELL.config.BULLET_SPEED = 400;
+
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
 WELL.config.PLAYER_HIT_PARTICLE = 'assets/images/playerHitParticle.png';
