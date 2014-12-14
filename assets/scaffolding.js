@@ -9,6 +9,12 @@ WELL.scaffolding.createScaffolding = function () {
     }
 };
 
+WELL.scaffolding.createSteadyCam = function () {
+    WELL.scaffolding.steadyCam = WELL.run.game.add.sprite(WELL.config.CENTER_X, (WELL.scaffolding.sprite.body.y + 300));
+    WELL.run.game.camera.follow(WELL.scaffolding.steadyCam);
+    WELL.run.game.physics.arcade.enable(WELL.scaffolding.steadyCam);
+};
+
 WELL.scaffolding.createTether = function () {
     WELL.scaffolding.tether = 
             WELL.run.game.physics.p2.createSpring(WELL.scaffolding.sprite, 
@@ -17,16 +23,18 @@ WELL.scaffolding.createTether = function () {
 };
 
 WELL.scaffolding.preload = function () {
-
 };
 
 WELL.scaffolding.create = function () {
     WELL.player.createScaffolding();
     WELL.player.createTether();
+    WELL.scaffolding.createSteadyCam();
 };
 
 WELL.scaffolding.update = function () {
+
     if (WELL.scaffolding.sprite.body.y < (WELL.config.WORLD_HEIGHT - WELL.config.SCREEN_HEIGHT)) {
-        WELL.scaffolding.sprite.body.moveDown(WELL.config.DESCENT_SPEED);
-    }    
+        WELL.scaffolding.sprite.body.moveDown(WELL.config.DESCENT_SPEED)
+    }
+    WELL.scaffolding.steadyCam.body.y = (WELL.scaffolding.sprite.body.y + 300);    
 };
