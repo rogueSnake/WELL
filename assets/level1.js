@@ -13,7 +13,7 @@ WELL.level1.create = function () {
     WELL.level1.map.addTilesetImage('tilemap', 'gameTiles');
 
     // 'background' and 'walls' are both specified in Tiled.
-    WELL.level1.backgroundlayer = WELL.level1.map.createLayer('background');
+ //   WELL.level1.backgroundlayer = WELL.level1.map.createLayer('background');
     WELL.level1.blockedLayer = WELL.level1.map.createLayer('walls');
 
     WELL.run.game.physics.p2.enable(WELL.level1.blockedLayer);
