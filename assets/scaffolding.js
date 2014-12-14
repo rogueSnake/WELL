@@ -26,8 +26,8 @@ WELL.scaffolding.preload = function () {
 };
 
 WELL.scaffolding.create = function () {
-    WELL.player.createScaffolding();
-    WELL.player.createTether();
+    WELL.scaffolding.createScaffolding();
+    WELL.scaffolding.createTether();
     WELL.scaffolding.createSteadyCam();
 };
 

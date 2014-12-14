@@ -41,9 +41,7 @@ WELL.player.create = function () {
     WELL.player.createSprite();
     WELL.player.createEmitter();
 
-    WELL.scaffolding.createScaffolding();
-    WELL.scaffolding.createTether();
-    WELL.scaffolding.createSteadyCam();
+    WELL.scaffolding.create();
 
     WELL.run.game.physics.p2.collide(WELL.player.sprite, WELL.level1.blockedLayer);
     WELL.player.sprite.body.onBeginContact.add(WELL.player.emitShit);

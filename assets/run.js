@@ -16,7 +16,7 @@ WELL.run.preload = function () {
     WELL.monster.preload();
     WELL.weapon.preload();
     WELL.player.preload();
-//    WELL.scaffolding.preload;
+//    WELL.scaffolding.preload();
 // ^^^ These scaffolding lines are my attempt to separate that code from the player code,
 // ^^^ but right they break the game and I've gotta go work on real things.
 };
