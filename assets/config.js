@@ -38,20 +38,28 @@ WELL.config.TETHER_DAMPING = 30;
 // Maybe change "default" to "pistol."
 WELL.config.PISTOL_BLOWBACK = 200;
 WELL.config.PISTOL_COOLDOWN_TIME = 350;
+WELL.config.PISTOL_PROJECTILE_SPEED = 400;
+
 
 WELL.config.SHOTGUN_BLOWBACK = 400;
 WELL.config.SHOTGUN_COOLDOWN_TIME = 400;
+WELL.config.SHOTGUN_PROJECTILE_SPEED = 400;
 
 WELL.config.AK_BLOWBACK = 200;
 WELL.config.AK_COOLDOWN_TIME = 20;
+WELL.config.AK_PROJECTILE_SPEED = 400;
 
 WELL.config.M79_BLOWBACK = 500;
 WELL.config.M79_COOLDOWN_TIME = 500;
+WELL.config.M79_PROJECTILE_SPEED = 300;
 
+// I'm not exactly sure how the plasma blaster will be handled, but these
+// values are going to be determined by how long you hold the shoot "button"
+// down. It should charge, and probably splits in two when it hits a wall 
+// (think S. ICE, not E. SPARK).
 WELL.config.PLASMA_BLOWBACK = 0;
 WELL.config.PLASMA_COOLDOWN_TIME = 0;
-
-WELL.config.BULLET_SPEED = 400;
+WELL.config.PLASMA_PROJECTILE_SPEED = 0;
 
 WELL.config.TILEMAP_IMG = 'assets/images/tilemap.png';
 WELL.config.PLAYER_IMG = 'assets/images/player.png';
