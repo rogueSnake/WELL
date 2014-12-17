@@ -1,5 +1,9 @@
 WELL.weapon.shotgun = {};
 
+WELL.weapon.spawn = function (x,y) {
+    WELL.run.game.add.sprite(x,y, 'shotgun');
+}
+
 WELL.weapon.shotgun.grab = function () {
     WELL.weapon.cooldownTime = WELL.config.SHOTGUN_COOLDOWN_TIME;
     WELL.weapon.blowback = WELL.config.SHOTGUN_BLOWBACK;
@@ -57,6 +61,7 @@ WELL.weapon.fire = function() {
 
 WELL.weapon.preload = function () {
     WELL.run.game.load.image('bullet', WELL.config.BULLET_IMG);
+    WELL.run.game.load.image('shotgun', WELL.config.SHOTGUN_IMG);
 };
 
 WELL.weapon.create = function () {
@@ -76,6 +81,9 @@ WELL.weapon.create = function () {
 
     // The Well Inspector is ready to fire.
     WELL.weapon.nextShot = 0;
+    
+    //test code to spawn a shotgun
+    WELL.weapon.spawn(200,500);
 };
 
 WELL.weapon.update = function () {
