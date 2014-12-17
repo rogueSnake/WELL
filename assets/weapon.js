@@ -10,6 +10,44 @@ WELL.weapon.shotgun.grab = function () {
     WELL.weapon.projectileSpeed = WELL.config.SHOTGUN_PROJECTILE_SPEED;
     };
 
+// The following code DOES NOT break the game, it just does nothing.
+// I want it to shoot three bullets, one of which flies at an angle. This is 
+// just a test, there should be twelve shotgun pellets in all. If I can get
+// this working I'll try to abstract it for other weapons, but I'm leaving it
+// commented out to avoid confusion in the mean time. It does require input.
+/*
+WELL.weapon.shotgun.shoot = function () {
+    var l = 0, // loop counter
+        bullet = {};
+
+    for (l = 0; l > 2; l += 1) {
+        bullet = WELL.weapon.bullets.getFirstExists(false);
+
+        if (bullet) {
+            bullet.reset(WELL.player.sprite.x, WELL.player.sprite.y + 5);
+            WELL.weapon.nextShot = WELL.run.game.time.now + WELL.weapon.cooldownTime;
+
+            if (WELL.weapon.checkScreenThirds() === 1) {
+                bullet.body.velocity.x -= WELL.weapon.projectileSpeed;
+                WELL.player.sprite.body.moveRight(WELL.weapon.blowback);
+            }
+
+            else if (WELL.weapon.checkScreenThirds() === 3) {
+                bullet.body.velocity.x += WELL.weapon.projectileSpeed;
+                WELL.player.sprite.body.moveLeft(WELL.weapon.blowback);
+            }
+
+
+            if (l > 0) {
+                bullet.body.velocity.y += WELL.weapon.projectileSpeed;
+
+            } 
+
+        }
+    }
+};
+*/
+
 WELL.weapon.checkScreenThirds = function (x) {
 
     if (WELL.run.game.input.x < (WELL.config.SCREEN_WIDTH / 3)) {
@@ -18,6 +56,8 @@ WELL.weapon.checkScreenThirds = function (x) {
 
     else if (WELL.run.game.input.x > (WELL.config.SCREEN_WIDTH - 
             (WELL.config.SCREEN_WIDTH / 3))) {
+        
+//        WELL.weapon.shotgun.shoot();
         return 3;
     }
 
