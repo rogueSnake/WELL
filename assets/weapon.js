@@ -1,9 +1,15 @@
+WELL.weapon.inContact = function (spriteA, spriteB) {
+
+    var boundsA = spriteA.getBounds();
+    var boundsB = spriteB.getBounds();
+
+    return Phaser.Rectangle.intersects(boundsA, boundsB);
+};
+
 WELL.weapon.shotgun = {};
 
 WELL.weapon.spawn = function (x,y) {
     WELL.weapon.shotgun.sprite = WELL.run.game.add.sprite(x,y, 'shotgun');
-    WELL.run.game.physics.p2.enableBody(WELL.weapon.shotgun.sprite);
-    WELL.weapon.shotgun.sprite.body.kinematic = true;    
 };
 
 WELL.weapon.shotgun.grab = function () {
@@ -130,5 +136,10 @@ WELL.weapon.create = function () {
 };
 
 WELL.weapon.update = function () {
+    var isShotgunGrabbed = WELL.weapon.inContact(WELL.player.sprite, WELL.weapon.shotgun.sprite);
     WELL.weapon.fire();
+    
+    if (isShotgunGrabbed === true) {
+        WELL.weapon.shotgun.grab();
+    }
 };
