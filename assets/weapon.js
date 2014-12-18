@@ -1,13 +1,16 @@
 WELL.weapon.shotgun = {};
 
 WELL.weapon.spawn = function (x,y) {
-    WELL.run.game.add.sprite(x,y, 'shotgun');
-}
+    WELL.weapon.shotgun.sprite = WELL.run.game.add.sprite(x,y, 'shotgun');
+    WELL.run.game.physics.p2.enableBody(WELL.weapon.shotgun.sprite);
+    WELL.weapon.shotgun.sprite.body.kinematic = true;    
+};
 
 WELL.weapon.shotgun.grab = function () {
     WELL.weapon.cooldownTime = WELL.config.SHOTGUN_COOLDOWN_TIME;
     WELL.weapon.blowback = WELL.config.SHOTGUN_BLOWBACK;
     WELL.weapon.projectileSpeed = WELL.config.SHOTGUN_PROJECTILE_SPEED;
+    WELL.weapon.shotgun.sprite.exists = false;
     };
 
 // The following code DOES NOT break the game, it just does nothing.

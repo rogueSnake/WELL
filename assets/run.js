@@ -28,7 +28,16 @@ WELL.run.create = function () {
     WELL.run.game.physics.p2.gravity.y = WELL.config.GRAVITY;
     WELL.run.game.physics.p2.restitution = WELL.config.RESTITUTION;
     WELL.run.game.input.addPointer();
-//    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
+
+    //Collision Group Definitions
+    
+    var playerCG = WELL.run.game.physics.p2.createCollisionGroup();
+    var powerupCG = WELL.run.game.physics.p2.createCollisionGroup();
+    var monsterCG = WELL.run.game.physics.p2.createCollisionGroup();
+    var bulletCG = WELL.run.game.physics.p2.createCollisionGroup();
+    var bossCG = WELL.run.game.physics.p2.createCollisionGroup();
+    
+    //    WELL.run.game.physics.p2.updateBoundsCollisionGroup();
       
     WELL.gameOver.create();
     WELL.intro.create();
